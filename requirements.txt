@@ -1,0 +1,4 @@
+PyYAML
+requests
+psycopg2-binary
+arelle-release

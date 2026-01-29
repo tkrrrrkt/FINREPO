@@ -1,0 +1,134 @@
+==========================================
+DETAILED ANALYSIS REPORT - PHASE 1 VALIDATION
+==========================================
+Database: EDINET (5 companies, 7,677 facts)
+Date: 2026-01-29
+
+=== SECTION 1: CONTEXT PATTERN ANALYSIS ===
+
+1.1 Context Diversity by Company
+  doc_id  | unique_contexts | unique_periods | consolidation_types | total_contexts 
+----------+-----------------+----------------+---------------------+----------------
+ S100LQJ9 |             244 |              6 |                   0 |            244
+ S100LRYP |             222 |              6 |                   0 |            222
+ S100LUF2 |             186 |              6 |                   0 |            186
+ S100LUOZ |             236 |              6 |                   0 |            236
+ S100LUYR |             216 |              6 |                   0 |            216
+(5 行)
+
+
+1.2 Consolidation Type Distribution
+ consolidation_type | company_count | unique_contexts | total_records 
+--------------------+---------------+-----------------+---------------
+ NULL               |             5 |             394 |          1104
+(1 行)
+
+
+1.3 Period Type Distribution
+ period_type | companies | unique_contexts | count 
+-------------+-----------+-----------------+-------
+ instant     |         5 |             278 |   766
+ duration    |         5 |             116 |   338
+(2 行)
+
+
+=== SECTION 2: CONCEPT MAPPING COMPLETENESS ===
+
+2.1 Concept Usage Summary
+ total_concepts | total_qnames | total_facts | concept_density_pct 
+----------------+--------------+-------------+---------------------
+            762 |          762 |        7677 |                9.93
+(1 行)
+
+
+2.2 Top 25 Most Frequent Concepts
+                                                       concept_name                                                        | company_coverage | fact_count | context_count | coverage_pct 
+---------------------------------------------------------------------------------------------------------------------------+------------------+------------+---------------+--------------
+ NetAssets                                                                                                                 |                5 |        353 |           353 |          100
+ TotalChangesOfItemsDuringThePeriod                                                                                        |                5 |        235 |           235 |          100
+ NetChangesOfItemsOtherThanShareholdersEquity                                                                              |                5 |         98 |            98 |          100
+ BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany               |                4 |         82 |            82 |           80
+ NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany      |                4 |         82 |            82 |           80
+ NumberOfEmployees                                                                                                         |                5 |         76 |            76 |          100
+ BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany          |                2 |         70 |            70 |           40
+ DividendsFromSurplus                                                                                                      |                5 |         70 |            70 |          100
+ OperatingIncome                                                                                                           |                5 |         70 |            70 |          100
+ NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany |                2 |         70 |            70 |           40
+ Assets                                                                                                                    |                5 |         70 |            70 |          100
+ AverageNumberOfTemporaryWorkers                                                                                           |                4 |         60 |            60 |           80
+ ShareholdingRatio                                                                                                         |                5 |         57 |            57 |          100
+ NumberOfSharesHeld                                                                                                        |                5 |         57 |            57 |          100
+ NumberOfSharesHeldOrdinarySharesInformationAboutDirectorsAndCorporateAuditors                                             |                5 |         56 |            56 |          100
+ ImpairmentLossEL                                                                                                          |                4 |         55 |            55 |           80
+ RevenuesFromExternalCustomers                                                                                             |                4 |         54 |            54 |           80
+ DepreciationSegmentInformation                                                                                            |                4 |         54 |            54 |           80
+ TransactionsWithOtherSegments                                                                                             |                4 |         54 |            54 |           80
+ PurchaseOfTreasuryStock                                                                                                   |                4 |         52 |            52 |           80
+ NameMajorShareholders                                                                                                     |                5 |         52 |            52 |          100
+ AddressMajorShareholders                                                                                                  |                5 |         52 |            52 |          100
+ CareerSummaryInformationAboutDirectorsAndCorporateAuditorsTextBlock                                                       |                5 |         51 |            51 |          100
+ DateOfBirthInformationAboutDirectorsAndCorporateAuditors                                                                  |                5 |         51 |            51 |          100
+ NameInformationAboutDirectorsAndCorporateAuditors                                                                         |                5 |         51 |            51 |          100
+(25 行)
+
+
+2.3 Concept Coverage Analysis
+psql:analysis_report.sql:93: ERROR:  aggregate functions are not allowed in FILTER
+行 3: ...       COUNT(DISTINCT concept_name) FILTER (WHERE COUNT(DIST...
+                                                           ^
+
+2.4 Company-wise Concept Counts
+  doc_id  | distinct_concepts | total_facts | avg_facts_per_concept 
+----------+-------------------+-------------+-----------------------
+ S100LRYP |               523 |        1523 |                   2.9
+ S100LUOZ |               502 |        1610 |                   3.2
+ S100LUYR |               501 |        1555 |                   3.1
+ S100LQJ9 |               496 |        1684 |                   3.4
+ S100LUF2 |               453 |        1305 |                   2.9
+(5 行)
+
+
+=== SECTION 3: UNIT NORMALIZATION VALIDATION ===
+
+3.1 Unit Normalization Summary
+ unit_ref_normalized | company_count | fact_count | pct_of_total 
+---------------------+---------------+------------+--------------
+ JPY                 |             5 |       7497 |         97.7
+ pure                |             1 |        125 |          1.6
+ shares              |             1 |         55 |          0.7
+(3 行)
+
+
+3.2 Value Normalization Quality
+ total_with_normalized | has_value | has_both | normalized_only | conversion_quality_pct 
+-----------------------+-----------+----------+-----------------+------------------------
+                  7677 |       965 |      965 |               0 |                  100.0
+(1 行)
+
+
+=== SECTION 4: CONCEPT HIERARCHY EXTRACTION ===
+
+4.1 Hierarchy Statistics
+ unique_child_concepts | unique_parent_concepts | total_relationships | max_hierarchy_level | min_hierarchy_level | documents_with_hierarchy 
+-----------------------+------------------------+---------------------+---------------------+---------------------+--------------------------
+                   708 |                    222 |                 708 |                  13 |                   2 |                        1
+(1 行)
+
+
+4.2 Hierarchy Level Distribution
+ hierarchy_level | concept_count | relationship_count 
+-----------------+---------------+--------------------
+               2 |             3 |                  3
+               3 |            23 |                 23
+               4 |            27 |                 27
+               5 |            47 |                 47
+               6 |            67 |                 67
+               7 |           154 |                154
+               8 |           108 |                108
+               9 |           153 |                153
+              10 |            71 |                 71
+              11 |            41 |                 41
+              12 |            12 |                 12
+              13 |             2 |                  2
+(12 行)
+

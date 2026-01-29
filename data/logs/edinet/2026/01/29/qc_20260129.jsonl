@@ -1,0 +1,16 @@
+{"ts": "2026-01-29T16:05:56.955521", "level": "WARN", "event": "qc_warn", "run_id": "20260129_160555", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T16:05:57.007017", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_160555", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}
+{"ts": "2026-01-29T16:06:06.171751", "level": "WARN", "event": "qc_warn", "run_id": "20260129_160605", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T16:06:06.214208", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_160605", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}
+{"ts": "2026-01-29T16:06:13.058379", "level": "WARN", "event": "qc_warn", "run_id": "20260129_160612", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T16:06:13.091317", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_160612", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}
+{"ts": "2026-01-29T16:06:36.804514", "level": "WARN", "event": "qc_warn", "run_id": "20260129_160635", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T16:06:36.946740", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_160635", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}
+{"ts": "2026-01-29T20:07:55.278820", "level": "WARN", "event": "qc_warn", "run_id": "20260129_200754", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T20:07:55.323445", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_200754", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}
+{"ts": "2026-01-29T20:08:24.223809", "level": "WARN", "event": "qc_warn", "run_id": "20260129_200823", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T20:08:24.254972", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_200823", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}
+{"ts": "2026-01-29T20:15:41.360408", "level": "WARN", "event": "qc_warn", "run_id": "20260129_201540", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T20:15:41.393867", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_201540", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}
+{"ts": "2026-01-29T20:15:59.227144", "level": "WARN", "event": "qc_warn", "run_id": "20260129_201558", "doc_id": "S100LUF2", "qc_status": "warn", "qc_reason": ["consolidation_flag_missing"]}
+{"ts": "2026-01-29T20:15:59.291319", "level": "WARN", "event": "fact_dedup", "run_id": "20260129_201558", "doc_id": "S100LUF2", "dup_count": 42, "conflict_count": 0}

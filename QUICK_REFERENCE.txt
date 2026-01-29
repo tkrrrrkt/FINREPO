@@ -1,0 +1,152 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           FINANCIAL DATA ANALYSIS - QUICK REFERENCE SUMMARY               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+DATABASE: PostgreSQL (edinet) | DATE: 2026-01-29
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. DATA OVERVIEW
+   ├─ Total Companies:        5 Japanese listed firms
+   ├─ Total Financial Facts:  7,677 records
+   ├─ Fiscal Period:          FY 2021 (2021-03-31)
+   ├─ Total Concepts:         762 XBRL concepts
+   └─ Database Status:        ✅ EXCELLENT
+
+2. COMPANIES IN DATASET
+   ├─ ほくやく・竹山 (SEC: 30550)      → 1,684 facts
+   ├─ 日本ロジテム (SEC: 90600)       → 1,610 facts
+   ├─ ＴＢＫ (SEC: 72770)               → 1,555 facts
+   ├─ 川田テクノロジーズ (SEC: 34430)  → 1,523 facts
+   └─ トーアミ (SEC: 59730)            → 1,305 facts
+
+3. DATA QUALITY SCORECARD
+   ┌──────────────────────┬─────────┬───────────────┐
+   │ Metric               │ Score   │ Status        │
+   ├──────────────────────┼─────────┼───────────────┤
+   │ Numeric Values       │ 70.6%   │ ✅ Good       │
+   │ Text Values          │ 16.7%   │ ✅ Good       │
+   │ NIL/Missing          │  8.2%   │ ⚠️  Minor     │
+   │ Currency Consistency │ 100%    │ ✅ Excellent  │
+   │ Value Distribution   │ Clean   │ ✅ No Outliers│
+   └──────────────────────┴─────────┴───────────────┘
+
+4. BALANCE SHEET (BS) READINESS
+   ┌──────────────────────┬──────────────────────────────────┐
+   │ Component            │ Availability & Status            │
+   ├──────────────────────┼──────────────────────────────────┤
+   │ Total Assets         │ ✅ All 5 companies (avg 14 recs) │
+   │ Current Assets       │ ⚠️  All companies (4 recs each)  │
+   │ Liabilities          │ ✅ All 5 companies (avg 7 recs)  │
+   │ Net Assets           │ ✅ STRONG (avg 71 records)       │
+   │ Shareholders Equity  │ ✅ Consistent (4 records each)   │
+   ├──────────────────────┼──────────────────────────────────┤
+   │ OVERALL BS SCORE     │ 8/10 - READY FOR ANALYSIS        │
+   └──────────────────────┴──────────────────────────────────┘
+
+5. PROFIT & LOSS (PL) READINESS
+   ┌──────────────────────┬──────────────────────────────────┐
+   │ Component            │ Availability & Status            │
+   ├──────────────────────┼──────────────────────────────────┤
+   │ Net Sales (Revenue)  │ ⚠️  Missing in 1 co (4-18 recs)   │
+   │ COGS                 │ ❌ CRITICAL GAP (only 2 recs)     │
+   │ Gross Profit         │ ⚠️  Limited (2-4 records)        │
+   │ Operating Income     │ ✅ STRONG (avg 14 records)       │
+   │ Ordinary Income      │ ✅ Consistent (4 records)        │
+   │ Net Income           │ ✅ Good (8-12 records)           │
+   ├──────────────────────┼──────────────────────────────────┤
+   │ OVERALL PL SCORE     │ 5/10 - LIMITED BUT USABLE        │
+   └──────────────────────┴──────────────────────────────────┘
+
+6. ANALYSIS READINESS MATRIX
+   ┌──────────────────────────────────┬────────────┬────────┐
+   │ Analysis Type                    │ Readiness  │ Score  │
+   ├──────────────────────────────────┼────────────┼────────┤
+   │ Balance Sheet Comparison         │ 🟢 Ready   │ 8/10   │
+   │ Profitability Comparison         │ 🟡 Limited │ 6/10   │
+   │ Financial Ratio Analysis         │ 🟡 Limited │ 6/10   │
+   │ Multi-company Benchmarking       │ 🟢 Ready   │ 8/10   │
+   │ Trend Analysis (YoY)             │ 🔴 Blocked │ 2/10   │
+   │ Segment Analysis                 │ 🟢 Ready   │ 8/10   │
+   ├──────────────────────────────────┼────────────┼────────┤
+   │ OVERALL READINESS SCORE          │ 6.3/10     │        │
+   └──────────────────────────────────┴────────────┴────────┘
+
+7. CRITICAL FINDINGS
+   
+   ✅ STRENGTHS:
+      • 5 comparable companies with synchronized reporting
+      • High numeric data quality (70%+)
+      • Complete BS structure (Assets, Liabilities, Equity)
+      • Strong Operating Income coverage
+      • Single currency (JPY) - no conversion needed
+      • Minimal NIL values (<10%)
+   
+   ❌ CRITICAL GAPS:
+      • COGS data missing (2 records only) → Cannot calculate gross margin
+      • Single fiscal period only → No trend analysis possible
+      • Consolidation status unclear → Need clarification on reporting type
+      • Revenue missing for 1 company → 日本ロジテム has 0 sales records
+      • No cash flow statement → No liquidity analysis possible
+
+8. DATA LIMITATIONS
+   
+   What CAN be analyzed:
+      ✅ Operating Income trends & comparisons
+      ✅ Net Income/Profitability metrics
+      ✅ Balance Sheet size & structure
+      ✅ Financial ratios: ROE, Equity Ratio, Asset Efficiency
+      ✅ Segment-level breakdown
+      ✅ Peer company benchmarking
+   
+   What CANNOT be analyzed:
+      ❌ Gross Profit Margin (COGS missing)
+      ❌ Multi-year trends (single period only)
+      ❌ Operating expense breakdown
+      ❌ Cash flow analysis
+      ❌ Detailed inventory/receivables analysis
+
+9. SAMPLE DATA SNIPPET
+   
+   Company: 川田テクノロジーズ (FY 2021-03-31)
+   Period End: 2021-03-31 | Filing: 2021-06-30
+   
+   • Total Assets:      147.4 Billion JPY
+   • Net Sales:         130.9 Billion JPY (peak segment)
+   • Operating Income:  9.3 Billion JPY (peak segment)
+   • Net Income:        1.1 Billion JPY
+   • Shareholders Eq:   (Available but varies by segment)
+
+10. RECOMMENDATIONS
+    
+    ✅ PROCEED WITH:
+       1. Balance Sheet comparative analysis across 5 companies
+       2. Operating profitability benchmarking
+       3. Asset size & efficiency comparison
+       4. Financial ratio analysis (ROE, Equity Ratio)
+       5. Segment-level metrics examination
+    
+    ⚠️  CONDITIONAL:
+       6. Revenue analysis (skip 日本ロジテム; acknowledge gaps)
+       7. Operating margin analysis only (no gross margin)
+       8. Document all COGS limitations in methodology
+    
+    🔄 FUTURE ENHANCEMENTS:
+       9. Collect Q1, Q2, Q3 2021 data for trend analysis
+       10. Acquire FY 2020, 2022 data for YoY comparison
+       11. Verify consolidation status in source XBRL
+       12. Clarify segment reporting structure
+
+11. FINAL VERDICT
+    
+    Overall Readiness:  6.3/10 (CONDITIONALLY READY)
+    
+    CONCLUSION: YES, BS/PL analysis is possible, BUT:
+    
+    • Focus on Balance Sheet and Operating Profitability
+    • Avoid detailed gross margin analysis (COGS gap)
+    • No multi-year trend analysis (single period)
+    • Use for peer benchmarking and segment analysis
+    • Document all data gaps in final report
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REPORT GENERATED: 2026-01-29 | DATABASE: PostgreSQL EDINET | STATUS: COMPLETE

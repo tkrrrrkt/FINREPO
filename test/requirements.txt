@@ -1,0 +1,20 @@
+# Test Requirements
+
+# Testing framework
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Database testing
+psycopg2-binary>=2.9.0
+
+# Mocking
+pytest-mock>=3.10.0
+
+# Data validation (optional)
+# pytest-datadir>=1.7.0
+
+# XBRL (if testing with real files - optional)
+# arelle-release>=2.0
+
+# Python utilities
+python-dotenv>=0.20.0

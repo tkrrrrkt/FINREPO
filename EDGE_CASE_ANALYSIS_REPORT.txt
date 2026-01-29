@@ -1,0 +1,83 @@
+==========================================
+=== SECTION 5: EDGE CASES & RISK ANALYSIS ===
+==========================================
+
+5.1 NULL Value Analysis
+ facts_with_no_value | text_values | nil_flags | missing_decimals | missing_unit | missing_context | total_facts 
+---------------------+-------------+-----------+------------------+--------------+-----------------+-------------
+                 628 |        1482 |       628 |             2110 |         1544 |               0 |        7677
+(1 行)
+
+
+5.2 Unit Normalization Anomalies
+ total_numeric_values | unmapped_units | extreme_large_jpy | negative_jpy | conversion_failures 
+----------------------+----------------+-------------------+--------------+---------------------
+                 5567 |              0 |                 0 |          138 |                4602
+(1 行)
+
+
+5.3 Concept-Context Mismatch Detection
+ total_facts | affected_companies | null_concepts | null_contexts | unit_normalization_orphans 
+-------------+--------------------+---------------+---------------+----------------------------
+        7677 |                  5 |             0 |             0 |                       1544
+(1 行)
+
+
+5.4 Concept Hierarchy Validation
+ total_hierarchy_children | children_in_facts | parents_in_facts | total_relationships 
+--------------------------+-------------------+------------------+---------------------
+                      708 |               426 |               10 |                 708
+(1 行)
+
+
+5.5 Top Concepts WITHOUT Hierarchy Mapping
+                                                                                      concept_name                                                                                       | company_count | fact_count | hierarchy_status 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+------------+------------------
+ BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany                                                                        |             2 |         70 | NO_HIERARCHY
+ NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany                                                               |             2 |         70 | NO_HIERARCHY
+ ImpairmentLossEL                                                                                                                                                                        |             4 |         55 | NO_HIERARCHY
+ RevenuesFromExternalCustomers                                                                                                                                                           |             4 |         54 | NO_HIERARCHY
+ TransactionsWithOtherSegments                                                                                                                                                           |             4 |         54 | NO_HIERARCHY
+ DepreciationSegmentInformation                                                                                                                                                          |             4 |         54 | NO_HIERARCHY
+ PurchaseOfTreasuryStock                                                                                                                                                                 |             4 |         52 | NO_HIERARCHY
+ IncreaseInPropertyPlantAndEquipmentAndIntangibleAssets                                                                                                                                  |             3 |         40 | NO_HIERARCHY
+ PurposeOfShareholdingQuantitativeEffectsOfShareholdingAndReasonForIncreaseInNumberOfSharesDetailsOfSpecifiedInvestmentSharesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany |             2 |         35 | NO_HIERARCHY
+ WhetherIssuerOfAforementionedSharesHoldsReportingCompanysSharesDetailsOfSpecifiedInvestmentSharesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany                            |             2 |         35 | NO_HIERARCHY
+ NameOfSecuritiesDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany                                                                 |             2 |         35 | NO_HIERARCHY
+ Goodwill                                                                                                                                                                                |             2 |         28 | NO_HIERARCHY
+ ReversalOfRevaluationReserveForLand                                                                                                                                                     |             3 |         21 | NO_HIERARCHY
+ OperatingRevenue1                                                                                                                                                                       |             2 |         20 | NO_HIERARCHY
+ IssuanceOfNewSharesexerciseOfSubscriptionRightsToShares                                                                                                                                 |             1 |         18 | NO_HIERARCHY
+(15 行)
+
+
+5.6 Duplicate Context Detection (Same Fact, Multiple Contexts)
+  doc_id  |                                                       concept_name                                                        | context_count | fact_count | distinct_values 
+----------+---------------------------------------------------------------------------------------------------------------------------+---------------+------------+-----------------
+ S100LUYR | NetAssets                                                                                                                 |            80 |         80 |              57
+ S100LUF2 | NetAssets                                                                                                                 |            75 |         75 |              50
+ S100LRYP | NetAssets                                                                                                                 |            69 |         69 |              59
+ S100LUOZ | NetAssets                                                                                                                 |            66 |         66 |              48
+ S100LQJ9 | NetAssets                                                                                                                 |            63 |         63 |              37
+ S100LUYR | TotalChangesOfItemsDuringThePeriod                                                                                        |            53 |         53 |              31
+ S100LUF2 | TotalChangesOfItemsDuringThePeriod                                                                                        |            50 |         50 |              28
+ S100LRYP | TotalChangesOfItemsDuringThePeriod                                                                                        |            46 |         46 |              32
+ S100LUOZ | TotalChangesOfItemsDuringThePeriod                                                                                        |            44 |         44 |              28
+ S100LQJ9 | TotalChangesOfItemsDuringThePeriod                                                                                        |            42 |         42 |              19
+ S100LQJ9 | BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany          |            42 |         42 |              32
+ S100LQJ9 | NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany |            42 |         42 |              33
+ S100LUOZ | BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany               |            34 |         34 |              34
+ S100LUOZ | NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany      |            34 |         34 |              15
+ S100LRYP | NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany |            28 |         28 |              17
+ S100LRYP | BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentLargestHoldingCompany          |            28 |         28 |              21
+ S100LQJ9 | BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany               |            24 |         24 |              13
+ S100LQJ9 | NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany      |            24 |         24 |              13
+ S100LQJ9 | AverageNumberOfTemporaryWorkers                                                                                           |            22 |         22 |              16
+ S100LQJ9 | NumberOfEmployees                                                                                                         |            22 |         22 |              17
+(20 行)
+
+
+5.7 Performance Index Analysis
+psql:phase1_edge_case_analysis.sql:93: ERROR:  column "tablename" does not exist
+行 3:     tablename,
+          ^
