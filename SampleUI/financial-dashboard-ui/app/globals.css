@@ -1,0 +1,313 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.55 0.15 155);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.25 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.55 0.15 155);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.55 0.15 155);
+  --chart-1: oklch(0.55 0.15 155);
+  --chart-2: oklch(0.6 0.15 250);
+  --chart-3: oklch(0.65 0.18 35);
+  --chart-4: oklch(0.7 0.15 300);
+  --chart-5: oklch(0.6 0.12 200);
+  --radius: 0.5rem;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.55 0.15 155);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.02 155);
+  --sidebar-accent-foreground: oklch(0.25 0.05 155);
+  --sidebar-border: oklch(0.92 0 0);
+  --sidebar-ring: oklch(0.55 0.15 155);
+  --warning: oklch(0.75 0.15 80);
+  --warning-foreground: oklch(0.35 0.1 80);
+  --success: oklch(0.55 0.15 155);
+  --success-foreground: oklch(1 0 0);
+
+  /* Financial - 財務指標用カラー */
+  --financial-profit: oklch(0.65 0.18 145);
+  --financial-profit-light: oklch(0.85 0.12 145);
+  --financial-profit-dark: oklch(0.45 0.15 145);
+  --financial-loss: oklch(0.60 0.20 25);
+  --financial-loss-light: oklch(0.80 0.12 25);
+  --financial-loss-dark: oklch(0.45 0.18 25);
+  --financial-neutral: oklch(0.60 0.02 240);
+
+  /* Status - ステータス表示用 */
+  --status-good: oklch(0.65 0.18 145);
+  --status-good-bg: oklch(0.95 0.04 145);
+  --status-good-border: oklch(0.75 0.12 145);
+  --status-warning: oklch(0.75 0.15 80);
+  --status-warning-bg: oklch(0.95 0.04 80);
+  --status-warning-border: oklch(0.80 0.10 80);
+  --status-danger: oklch(0.60 0.20 25);
+  --status-danger-bg: oklch(0.95 0.04 25);
+  --status-danger-border: oklch(0.75 0.12 25);
+  --status-info: oklch(0.55 0.15 240);
+  --status-info-bg: oklch(0.95 0.03 240);
+  --status-info-border: oklch(0.75 0.10 240);
+
+  /* Financial Sections - 財務諸表セクション用 */
+  --section-assets: oklch(0.55 0.15 155);
+  --section-liabilities: oklch(0.60 0.18 25);
+  --section-equity: oklch(0.55 0.15 240);
+  --section-operating: oklch(0.55 0.15 155);
+  --section-investing: oklch(0.65 0.12 200);
+  --section-financing: oklch(0.60 0.16 300);
+}
+
+.dark {
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.17 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.17 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.6 0.15 155);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.6 0.15 155);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.6 0.15 155);
+  --chart-1: oklch(0.6 0.15 155);
+  --chart-2: oklch(0.6 0.15 250);
+  --chart-3: oklch(0.65 0.18 35);
+  --chart-4: oklch(0.7 0.15 300);
+  --chart-5: oklch(0.6 0.12 200);
+  --sidebar: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.6 0.15 155);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.22 0.02 155);
+  --sidebar-accent-foreground: oklch(0.9 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.6 0.15 155);
+  --warning: oklch(0.75 0.15 80);
+  --warning-foreground: oklch(0.35 0.1 80);
+  --success: oklch(0.6 0.15 155);
+  --success-foreground: oklch(1 0 0);
+
+  /* Financial - 財務指標用カラー (Dark) */
+  --financial-profit: oklch(0.70 0.16 145);
+  --financial-profit-light: oklch(0.50 0.14 145);
+  --financial-profit-dark: oklch(0.80 0.12 145);
+  --financial-loss: oklch(0.65 0.18 25);
+  --financial-loss-light: oklch(0.45 0.16 25);
+  --financial-loss-dark: oklch(0.75 0.12 25);
+  --financial-neutral: oklch(0.65 0.02 240);
+
+  /* Status - ステータス表示用 (Dark) */
+  --status-good: oklch(0.70 0.16 145);
+  --status-good-bg: oklch(0.25 0.06 145);
+  --status-good-border: oklch(0.45 0.12 145);
+  --status-warning: oklch(0.75 0.15 80);
+  --status-warning-bg: oklch(0.25 0.06 80);
+  --status-warning-border: oklch(0.50 0.10 80);
+  --status-danger: oklch(0.65 0.18 25);
+  --status-danger-bg: oklch(0.25 0.06 25);
+  --status-danger-border: oklch(0.50 0.12 25);
+  --status-info: oklch(0.60 0.14 240);
+  --status-info-bg: oklch(0.25 0.05 240);
+  --status-info-border: oklch(0.50 0.10 240);
+
+  /* Financial Sections - 財務諸表セクション用 (Dark) */
+  --section-assets: oklch(0.60 0.14 155);
+  --section-liabilities: oklch(0.65 0.16 25);
+  --section-equity: oklch(0.60 0.14 240);
+  --section-operating: oklch(0.60 0.14 155);
+  --section-investing: oklch(0.65 0.12 200);
+  --section-financing: oklch(0.65 0.14 300);
+}
+
+@theme inline {
+  --font-sans: var(--font-noto-sans-jp), var(--font-geist), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  /* Financial Colors */
+  --color-financial-profit: var(--financial-profit);
+  --color-financial-profit-light: var(--financial-profit-light);
+  --color-financial-profit-dark: var(--financial-profit-dark);
+  --color-financial-loss: var(--financial-loss);
+  --color-financial-loss-light: var(--financial-loss-light);
+  --color-financial-loss-dark: var(--financial-loss-dark);
+  --color-financial-neutral: var(--financial-neutral);
+
+  /* Status Colors */
+  --color-status-good: var(--status-good);
+  --color-status-good-bg: var(--status-good-bg);
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-bg: var(--status-warning-bg);
+  --color-status-danger: var(--status-danger);
+  --color-status-danger-bg: var(--status-danger-bg);
+  --color-status-info: var(--status-info);
+  --color-status-info-bg: var(--status-info-bg);
+
+  /* Section Colors */
+  --color-section-assets: var(--section-assets);
+  --color-section-liabilities: var(--section-liabilities);
+  --color-section-equity: var(--section-equity);
+  --color-section-operating: var(--section-operating);
+  --color-section-investing: var(--section-investing);
+  --color-section-financing: var(--section-financing);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 数値の等幅表示（tabular-nums） */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* テーブル内の数値を自動的に等幅に */
+table td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 財務数値表示用 */
+.financial-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  text-align: right;
+}
+
+/* 財務値の増減表示 */
+.financial-positive {
+  color: var(--financial-profit);
+}
+
+.financial-negative {
+  color: var(--financial-loss);
+}
+
+.financial-neutral {
+  color: var(--financial-neutral);
+}
+
+/* ステータスバッジ */
+.status-badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+.status-badge-good {
+  background-color: var(--status-good-bg);
+  color: var(--status-good);
+  border: 1px solid var(--status-good-border);
+}
+
+.status-badge-warning {
+  background-color: var(--status-warning-bg);
+  color: var(--status-warning);
+  border: 1px solid var(--status-warning-border);
+}
+
+.status-badge-danger {
+  background-color: var(--status-danger-bg);
+  color: var(--status-danger);
+  border: 1px solid var(--status-danger-border);
+}
+
+.status-badge-info {
+  background-color: var(--status-info-bg);
+  color: var(--status-info);
+  border: 1px solid var(--status-info-border);
+}
+
+/* 財務セクション用背景 */
+.section-assets-bg {
+  background-color: color-mix(in oklch, var(--section-assets) 10%, transparent);
+}
+
+.section-liabilities-bg {
+  background-color: color-mix(in oklch, var(--section-liabilities) 10%, transparent);
+}
+
+.section-equity-bg {
+  background-color: color-mix(in oklch, var(--section-equity) 10%, transparent);
+}
+
+/* フォーカスインジケータ（アクセシビリティ） */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* スキップリンク（アクセシビリティ） */
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50;
+  @apply bg-background text-foreground px-4 py-2 rounded-md;
+}
